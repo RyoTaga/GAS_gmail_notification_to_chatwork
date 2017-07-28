@@ -1,0 +1,17 @@
+{
+    "extends": "airbnb-base",
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "globals": {
+        "google": true
+    },
+    "rules": {
+        "no-console": 0,
+        "no-alert": 0,
+        "indent": ["error", 2],
+        "no-underscore-dangle": "off",
+        "no-plusplus": "off"
+    }
+}
