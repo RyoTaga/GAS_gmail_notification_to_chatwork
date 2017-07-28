@@ -1,7 +1,7 @@
 const sendNotification = () => {
-  const token = 'xxxxxxxxxxxxxxxxxxxxxxx';
-  const roomId = '123456789';
-  const label = 'label:xxx-xxxx-xx';
+  const token = process.env.CW_API_TOKEN;
+  const roomId = process.env.ROOMID;
+  const label = process.env.LABEL;
   const threads = GmailApp.search(`${label} is:unread`);
 
   if (threads == null || threads.lenght === 0) {
@@ -11,6 +11,7 @@ const sendNotification = () => {
     const msgs = thread.getMessages();
     msgs.forEach((msg) => {
       const subject = msg.getSubject();
+      const body = msg.getPlainBody();
       const client = ChatWorkClient.factory({
         token,
       });
